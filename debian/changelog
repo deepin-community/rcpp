@@ -1,3 +1,9 @@
+rcpp (1.0.7-2deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 20 Sep 2024 12:17:41 +0800
+
 rcpp (1.0.7-2) unstable; urgency=medium
 
   * Simple rebuild for unstable following Debian 11 release
