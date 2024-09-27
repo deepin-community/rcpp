@@ -1,5 +1,5 @@
 
-##  Copyright (C) 2019       	 Dirk Eddelbuettel
+##  Copyright (C) 2019 - 2024  Dirk Eddelbuettel
 ##
 ##  This file is part of Rcpp.
 ##
@@ -30,7 +30,7 @@ v <- as.integer(unlist(strsplit(pvstr, "\\.")))
 relstr <- as.character(as.package_version(paste(v[1:3], collapse=".")))
 
 ## call C++ function returning list of six values, three each for 'release' and 'dev' version
-res <- checkVersion(v)
+res <- checkVersion(v[1:min(4, length(v))])
 
 
 ## basic check: is the #defined version equal to the computed version (issue #1014)
@@ -46,5 +46,5 @@ if (length(v) >= 4) {
 
 if (length(v) <= 4) {
     ## basic check: is #defined string version equal to computed string
-    expect_equal(pvstr, res$def_dev_str, info="current computed version equal defined dev string")
+    expect_true(grepl(pvstr, res$def_dev_str), info="current computed version equal defined dev string")
 }

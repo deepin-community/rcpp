@@ -28,6 +28,7 @@
 // #define RCPP_DEBUG_MODULE_LEVEL 1
 
 #include <Rcpp/r/headers.h>
+#include <Rcpp/r/compat.h>
 
 /**
  * \brief Rcpp API
@@ -66,6 +67,7 @@ namespace Rcpp {
 #include <cfloat>
 #include <limits>
 #include <typeinfo>
+#include <utility>
 #include <Rcpp/sprintf.h>
 #include <R_ext/Callbacks.h>
 #include <R_ext/Visibility.h>

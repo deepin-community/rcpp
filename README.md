@@ -1,20 +1,20 @@
 ## Rcpp: Seamless R and C++ Integration
 
-[![Build Status](https://travis-ci.org/RcppCore/Rcpp.svg)](https://travis-ci.org/RcppCore/Rcpp)
 [![CI](https://github.com/RcppCore/Rcpp/workflows/ci/badge.svg)](https://github.com/RcppCore/Rcpp/actions?query=workflow%3Aci)
 [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN](https://www.r-pkg.org/badges/version/Rcpp)](https://cran.r-project.org/package=Rcpp)
-[![Dependencies](https://tinyverse.netlify.com/badge/Rcpp)](https://cran.r-project.org/package=Rcpp)
-[![Coverage Status](https://codecov.io/gh/RcppCore/Rcpp/graph/badge.svg)](https://codecov.io/github/RcppCore/Rcpp?branch=master)
+[![Dependencies](https://tinyverse.netlify.app/badge/Rcpp)](https://cran.r-project.org/package=Rcpp)
+[![Coverage Status](https://codecov.io/gh/RcppCore/Rcpp/graph/badge.svg)](https://app.codecov.io/github/RcppCore/Rcpp?branch=master)
 [![Debian package](https://img.shields.io/debian/v/r-cran-rcpp/sid?color=brightgreen)](https://packages.debian.org/sid/r-cran-rcpp)
+[![r-universe](https://rcppcore.r-universe.dev/badges/Rcpp)](https://rcppcore.r-universe.dev/rcpp)
 [![Last Commit](https://img.shields.io/github/last-commit/RcppCore/Rcpp)](https://github.com/RcppCore/Rcpp)
-[![Downloads](https://cranlogs.r-pkg.org/badges/Rcpp?color=brightgreen)](https://www.r-pkg.org/pkg/Rcpp)
+[![Downloads (monthly)](https://cranlogs.r-pkg.org/badges/Rcpp?color=brightgreen)](https://www.r-pkg.org/pkg/Rcpp)
+[![Downloads (total)](https://cranlogs.r-pkg.org/badges/grand-total/Rcpp?color=brightgreen)](https://www.r-pkg.org/pkg/Rcpp)
 [![CRAN use](https://jangorecki.gitlab.io/rdeps/Rcpp/CRAN_usage.svg?sanitize=true)](https://cran.r-project.org/package=Rcpp)
 [![CRAN indirect](https://jangorecki.gitlab.io/rdeps/Rcpp/indirect_usage.svg?sanitize=true)](https://cran.r-project.org/package=Rcpp)
 [![BioConductor use](https://jangorecki.gitlab.io/rdeps/Rcpp/BioC_usage.svg?sanitize=true)](https://cran.r-project.org/package=Rcpp)
-[![StackOverflow](https://img.shields.io/badge/stackoverflow-rcpp-orange.svg)](https://stackoverflow.com/questions/tagged/rcpp)
 [![JSS](https://img.shields.io/badge/JSS-10.18637%2Fjss.v040.i08-brightgreen)](https://dx.doi.org/10.18637/jss.v040.i08)
-[![Springer useR!](https://img.shields.io/badge/Springer%20useR!-10.1007%2F978--1--4614--6868--4-brightgreen)](https://www.springer.com/gp/book/9781461468677)
+[![Springer useR!](https://img.shields.io/badge/Springer%20useR!-10.1007%2F978--1--4614--6868--4-brightgreen)](https://www.amazon.com/gp/product/1461468671/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1461468671&linkCode=as2&tag=rcpp-20&linkId=3P5LNUWOAQ2YMEJ6)
 [![TAS](https://img.shields.io/badge/TAS-10.1080%2F00031305.2017.1375990-brightgreen)](https://dx.doi.org/10.1080/00031305.2017.1375990)
 
 ### Synopsis
@@ -30,14 +30,14 @@ represented as instances of `Rcpp::Environment`, functions are represented as
 `Rcpp::Function`, etc ...  The
 [Rcpp-introduction](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-introduction.pdf)
 vignette (now published as a
-[TAS paper](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.2017.1375990); an
+[TAS paper](https://doi.org/10.1080/00031305.2017.1375990); an
 [earlier introduction](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-jss-2011.pdf)
-was also published as a [JSS paper](https://www.jstatsoft.org/v40/i08/))
+was also published as a [JSS paper](https://doi.org/10.18637/jss.v040.i08)
 provides a good entry point to Rcpp as do the [Rcpp
-website](http://www.rcpp.org), the [Rcpp
+website](https://www.rcpp.org), the [Rcpp
 page](https://dirk.eddelbuettel.com/code/rcpp.html) and the [Rcpp
 Gallery](https://gallery.rcpp.org). Full documentation is provided by the
-[Rcpp book](http://www.rcpp.org/book/).
+[Rcpp book](https://www.amazon.com/gp/product/1461468671/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1461468671&linkCode=as2&tag=rcpp-20&linkId=3P5LNUWOAQ2YMEJ6).
 
 Other highlights:
 
@@ -65,21 +65,33 @@ See the [Rcpp-atttributes](https://cran.r-project.org/package=Rcpp/vignettes/Rcp
 
 ### Documentation
 
-The package ships with nine pdf vignettes, including a [recent introduction to
+The package ships with ten pdf vignettes, including a [recent introduction to
 Rcpp](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-introduction.pdf) now
 published as a [paper in
-TAS](https://amstat.tandfonline.com/doi/abs/10.1080/00031305.2017.1375990) (and as a
+TAS](https://doi.org/10.1080/00031305.2017.1375990) (and as a
 [preprint in PeerJ](https://peerj.com/preprints/3188/)). Also available is an
 [earlier
 introduction](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-jss-2011.pdf)
-which was published as a [JSS paper](https://www.jstatsoft.org/v40/i08/))
+which was published as a [JSS paper](https://doi.org/10.18637/jss.v040.i08).
 
 Among the other vignettes are the [Rcpp
 FAQ](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-FAQ.pdf) and the
 introduction to [Rcpp
 Attributes](https://cran.r-project.org/package=Rcpp/vignettes/Rcpp-attributes.pdf).
-Additional documentation is available via the [Rcpp book](http://www.rcpp.org/book/)
+Additional documentation is available via the [Rcpp book](https://www.amazon.com/gp/product/1461468671/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1461468671&linkCode=as2&tag=rcpp-20&linkId=3P5LNUWOAQ2YMEJ6)
 by Eddelbuettel (2013, Springer); see 'citation("Rcpp")' for details.
+
+### Performance
+
+Rcpp follows the C++ motto of _"you pay only for what you use"_ and imposes
+no _run-time_ performance penalty: Rcpp outperforms related packages in
+direct comparison, see for example [this repo for
+details](https://github.com/eddelbuettel/ldlasb).
+
+Compile-time performance can be tuned by selecting components. But it is also
+worth noting that use of [`ccache`](https://ccache.dev/) will (strongly)
+dominate all such possible component choices, we have [previously
+recommended](https://dirk.eddelbuettel.com/blog/2017/11/27/) its use.
 
 ### Examples
 
@@ -97,11 +109,15 @@ been factored out of Rcpp into the package RcppClassic, and it is still
 available for code relying on the older interface. New development should
 always use this Rcpp package instead.
 
-Other usage examples are provided by packages using Rcpp. As of January 2021,
-there are 2169 [CRAN](https://cran.r-project.org) packages using Rcpp, a further
-207 [BioConductor](https://www.bioconductor.org) packages in its current release
-as well as an unknown number of GitHub, Bitbucket, R-Forge, ... repositories
-using Rcpp.  All these packages provide usage examples for Rcpp.
+Other usage examples are provided by packages using Rcpp. As of early January
+2024, there are 2791 [CRAN](https://cran.r-project.org) packages using Rcpp
+(corresponding to 13.8% of all packages, and 59.9% of packages containing
+compiled code), a further 254 [BioConductor](https://www.bioconductor.org)
+packages in its current release as well as an unknown number of GitHub,
+Bitbucket, R-Forge, ... repositories using Rcpp.  All these packages provide
+usage examples for Rcpp. The package is in widespread use and has been
+downloaded over 78.1 million times (per the partial logs from the cloud mirrors
+of CRAN).
 
 ### Installation
 
@@ -156,13 +172,6 @@ mailing list hosted at R-forge.  Note that in order to keep spam down, you must
 be a subscriber in order to post.  One can also consult the list archives to see
 if your question has been asked before.
 
-Another option is to use
-[StackOverflow and its 'rcpp' tag](https://stackoverflow.com/questions/tagged/rcpp).
-Search functionality (use `rcpp` in squared brackets as in
-[[rcpp] my question terms](https://stackoverflow.com/search?q=[rcpp]%20my%20question%20terms)
-to tag the query) is very valuable as many questions have indeed been asked, and
-answered, before.
-
 The [issue tickets at the GitHub repo](https://github.com/RcppCore/Rcpp/issues)
 are the primary bug reporting interface.  As with the other web resources,
 previous issues can be searched as well.
@@ -171,7 +180,7 @@ previous issues can be searched as well.
 ### Authors
 
 Dirk Eddelbuettel, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou,
-Nathan Russell, Doug Bates, and John Chambers
+Nathan Russell, Iñaki Ucar, Doug Bates, and John Chambers
 
 ### License
 

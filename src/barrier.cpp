@@ -2,7 +2,7 @@
 // barrier.cpp: Rcpp R/C++ interface class library -- write barrier
 //
 // Copyright (C) 2010 - 2020  Dirk Eddelbuettel and Romain Francois
-// Copyright (C) 2021         Dirk Eddelbuettel, Romain Francois and Iñaki Ucar
+// Copyright (C) 2021 - 2022  Dirk Eddelbuettel, Romain Francois and Iñaki Ucar
 //
 // This file is part of Rcpp.
 //
@@ -22,11 +22,15 @@
 #define COMPILING_RCPP
 
 #define USE_RINTERNALS
-#include <Rinternals.h>
-#include <Rcpp/barrier.h>
-#include "internal.h"
+
 #include <algorithm>
+#include <Rinternals.h>
+
+#include <Rcpp/barrier.h>
 #include <Rcpp/protection/Shield.h>
+#include <Rcpp/r/compat.h>
+
+#include "internal.h"
 
 // [[Rcpp::register]]
 SEXP get_string_elt(SEXP x, R_xlen_t i) {			// #nocov start
@@ -50,7 +54,8 @@ void char_set_string_elt(SEXP x, R_xlen_t i, const char* value) {
 
 // [[Rcpp::register]]
 SEXP* get_string_ptr(SEXP x) {
-    return STRING_PTR(x);
+    // TODO: should we deprecate this?
+    return const_cast<SEXP*>(RCPP_STRING_PTR(x));
 }
 
 // [[Rcpp::register]]
@@ -65,7 +70,8 @@ void set_vector_elt(SEXP x, R_xlen_t i, SEXP value) {
 
 // [[Rcpp::register]]
 SEXP* get_vector_ptr(SEXP x) {
-    return VECTOR_PTR(x);							// #nocov end
+    // TODO: should we deprecate this?
+    return const_cast<SEXP*>(RCPP_VECTOR_PTR(x));							// #nocov end
 }
 
 // [[Rcpp::register]]
@@ -119,6 +125,7 @@ void Rcpp_precious_remove(SEXP token) {
     if (token == R_NilValue || TYPEOF(token) != LISTSXP) {
         return;
     }
+    SET_TAG(token, R_NilValue);
     SEXP before = CAR(token);
     SEXP after = CDR(token);
     SETCDR(before, after);
