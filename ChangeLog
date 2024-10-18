@@ -1,3 +1,669 @@
+2024-07-11  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.13
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+        * vignettes/rmd/Rcpp.bib: Idem
+        * inst/bib/Rcpp.bib: Idem
+	* vignettes/pdf/*: Rebuilt
+
+2024-07-07  Kevin Ushey  <kevinushey@gmail.com>
+
+	* inst/include/Rcpp/internal/SEXP_Iterator.h: Avoid using VECTOR_PTR
+	* inst/include/Rcpp/vector/Subsetter.h: Avoid using STRING_PTR
+	* inst/include/RcppCommon.h: Include compatibility defines
+	* src/barrier.cpp: Avoid using {STRING/VECTOR}_PTR
+	* inst/include/Rcpp/r/compat.h: Include compatibility defines
+
+2024-06-22  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2024-06-11  Kevin Ushey  <kevinushey@gmail.com>
+
+	* inst/include/Rcpp/internal/r_vector.h: Use template specializations to
+	avoid DATAPTR usage
+	* inst/include/Rcpp/vector/traits.h: Implement bounds checks in
+	r_vector_cache access
+	* inst/tinytest/cpp/Vector.cpp: Add unit tests
+	* inst/tinytest/test_vector.R: Add unit tests
+	* tests/tinytest.R: Test in serial by default
+
+2024-06-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/internal/export.h: More R_xlen_t switching
+	* inst/include/Rcpp/vector/SubMatrix.h: Idem
+	* inst/include/Rcpp/vector/Vector.h: Idem
+
+2024-06-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/internal/Proxy_Iterator.h (Proxy_Iterator):
+	Switch to R_xlen_t ('clang++-17 -Wconversion -Wno-sign-conversion')
+	* inst/include/Rcpp/DataFrame.h: Idem
+	* inst/include/Rcpp/Vector.h: Idem
+
+2024-05-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2024-05-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Remove link references to StackOverflow
+	* inst/NEWS.Rd: Idem
+	* inst/include/Rcpp/Module.h (S4_CppOverloadedMethods): Add cast to int
+	to avoid warnings under 'clang++-17 -Wconversion -Wno-sign-conversion'
+	* inst/include/Rcpp/vector/Vector.h (Vector): Idem
+	* inst/include/Rcpp/module/class.h: Switch variable to size_t to avoid
+	to avoid warnings under 'clang++-17 -Wconversion -Wno-sign-conversion'
+	* inst/tinytest/testRcppClass/src/init.c: Add void to signature
+
+2024-05-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2024-05-23  Andrew Johnson  <andrew.johnson@arjohnsonau.com>
+
+        * inst/include/Rcpp/: Added variadic templates to be used instead of
+	the generated code in `Rcpp/generated` and `Rcpp/module` when
+	compiling with C++11 or later.
+
+2024-05-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci-4.3/Dockerfile: Add rcpp/ci-4.3 container for R 4.3.*
+	* .github/workflows/ci.yaml (jobs): Add rcpp/ci-4.3 to matrix
+
+2024-05-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Use tinyverse.netlify.app for dependency badge
+
+2024-03-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci/Dockerfile: Switch the base container to r2u
+	* docker/plus/Dockerfile: Given r2u, install more binaries
+
+	* README.md: Add r-universe badge
+
+2024-02-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* inst/include/Rcpp/r/headers.h: Set R_NO_REMAP (and MAXELTSIZE)
+	only if not already defined (as will be needed with R 4.4.0)
+
+2024-01-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Update usage numbers
+
+	* README.md: Remove StackOverflow badge which only works for
+	logged-in users and is unsuitable for the README
+
+2024-01-08  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.12
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+        * vignettes/rmd/Rcpp.bib: Idem
+        * inst/bib/Rcpp.bib: Idem
+	* vignettes/pdf/*: Rebuilt
+
+2024-01-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp.bib: Updated to current versions of cited packages
+        * inst/bib/Rcpp.bib: Idem
+
+2023-12-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/api.cpp (type2name): Refine OBJSXP return
+
+2023-12-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/api.cpp (type2name): Recognise OBJSXP added in R 4.4.0
+
+2023-11-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/tinytest/testRcppInterfaceExporter/R/RcppExports.R: Regenerated
+	* inst/tinytest/testRcppInterfaceExporter/src/RcppExports.cpp: Idem
+
+2023-11-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* src/attributes.cpp (generateCpp): Add a format string for Rf_error
+	call to not run afoul of -Wformat-security
+
+2023-11-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* inst/include/Rcpp/iostream/Rstreambuf.h: Cast streamsize to int in
+	two spots
+	* inst/include/Rcpp/print.h (warningcall): Add missing '%s' format
+
+2023-11-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp-FAQ.Rmd: Updated and edited
+	* vignettes/pdf/Rcpp-FAQ.pdf: Updated
+	* vignettes/rmd/Rcpp.bib: Updated
+
+2023-10-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp-FAQ.Rmd: Updated and edited
+	* vignettes/pdf/Rcpp-FAQ.pdf: Updated
+	* vignettes/rmd/Rcpp.bib: Updated
+
+2023-10-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* R/tools.R: Correct missing Rd macros (spotted by R-devel CMD check)
+
+2023-10-22 Aaron Lun <infinite.monkeys.with.keyboards@gmail.com>
+
+	* inst/include/Rcpp/vector/MatrixColumn.h: Cast integer index
+	to R_xlen_t to avoid integer overflow with large matrices.
+	* inst/include/Rcpp/vector/MatrixRow.h: Ditto.
+	* inst/include/Rcpp/vector/Vector.h: Remove stray cast to int
+	that causes overflow when returning the end iterator.
+
+2023-09-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp-introduction.Rmd (Rcpp): Correct caption of
+	third figure (cf GitHub issue #1276)
+	* vignettes/pdf/Rcpp-introduction.pdf: Rebuilt
+
+2023-08-31  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2023-08-29  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* R/Attributes.R: Ad-hoc fix for testthat's C entrypoint in
+	RcppExports.cpp
+
+2023-08-03  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2023-08-03  Michael Chirico  <chiricom@google.com>
+
+        * src/attributes.cpp: Directly `#include <ostream>` for `std::endl`
+        * src/date.cpp: Directly `#include <R_ext/Booelan.h>` for `TRUE` and
+	`FALSE`
+
+2023-07-03  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.11
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+        * vignettes/rmd/Rcpp.bib: Idem
+        * inst/bib/Rcpp.bib: Idem
+	* vignettes/pdf/*: Rebuilt
+
+2023-07-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Update usage numbers in Examples section
+
+2023-07-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci-dev/Dockerfile: Make 'rm' more robust as 'rm -f'
+	* docker/ci-4.2/Dockerfile: Add new container for R 4.2.3
+	* .github/workflows/ci.yaml (jobs): Add entry for R 4.2.3
+
+2023-06-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* README.md: Two URL updates for appease R CMD check
+
+	* DESCRIPTION (Encoding): Somewhat belated addition
+
+2023-04-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Use app.codecov.io as base for codecov link
+
+2023-04-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml: Simplified container use
+
+2023-03-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/stale.yaml: Roll to v8
+
+2023-03-27  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* R/Attributes.R: Remove command quoting, not needed anymore for system2()
+	* inst/tinytest/test_xptr.R: Update copyright
+
+2023-03-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* inst/tinytest/test_stats.R: Revisit change from PR #1252; we now
+	use a slightly smaller tolerance to accomodate old and new value
+
+	* inst/tinytest/test_sugar.R: Protect a small number of tests on NA
+	propagation from running on arm64/Darwin which requires special care
+
+2023-03-25  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* R/Attributes.R: Switch to system2 to be able to capture stderr on error
+
+2023-03-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci-dev/Dockerfile: During Debian freeze experimental repo is
+	renamed which leads to a hickup here so temporarily remove list file
+
+2023-03-24  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* inst/tinytest/test_xptr.R: Skip some tests on Windows
+
+2023-03-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* src/attributes.cpp (RExportsGenerator::writeEnd): Replace a pair of
+	apostrophes with backticks in generated .Call() statemente
+
+2023-02-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/tinytest/test_stats.R: Use more accurate value in R 4.3.0
+
+2023-02-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/CITATION: Update to new format preferred by r-devel
+
+2023-02-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* inst/include/Rcpp/sugar/functions/sapply.h: Enable compilation
+	under C++20 (using clang++ and its C++ library) via invoke_result
+
+2023-01-29  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* inst/tinytest/test_xptr.R: Fix a couple of tests writing to stdout
+
+2023-01-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2023-01-24  Lukasz Laniewski-Wollk  <llaniewski@meil.pw.edu.pl>
+
+	* R/RcppLdpath.R: CxxFlags() now quotes only non-standard paths on linux
+
+2023-01-22  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.10
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+
+2023-01-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/String.h: Address clang++-14 conversion warning
+	* inst/include/Rcpp/sugar/functions/mean.h: Idem
+	* inst/include/Rcpp/vector/Vector.h: Idem
+	* src/attributes.cpp: Idem
+	* src/date.cpp: Idem
+
+2022-12-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/docker.yaml (jobs): Update several actions
+
+2022-12-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/stale.yaml (jobs): Update actions/stale@v6
+
+2022-11-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml (jobs): Update to actions/checkout@v3
+
+2022-10-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2022-10-27  Kevin Ushey  <kevinushey@gmail.com>
+
+	* inst/tinytest/cpp/coerce.cpp: add coerce unit tests
+	* inst/tinytest/test_coerce.R: idem
+
+2022-10-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/internal/r_coerce.h (coerce_to_string<RAWSXP >):
+	Replace last remaining sprintf with snprintf
+
+2022-10-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* R/Attributes.R (sourceCpp): Protect path to binary from spaces
+
+2022-10-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+	* inst/tinytest/test_dataframe.R (test.DataFrame.PushZeroLength): Add
+	new test
+	* inst/tinytest/cpp/DataFrame.cpp (DataFrame_PushOnEmpty): C++
+	support for new test
+
+2022-10-04  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/DataFrame.h (set_type_after_push): Allow zero-row
+	data.frame objects to be grown by push_{back,front}()
+
+2022-09-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h (RCPP_DEV_VERSION): Idem
+
+2022-09-23  Kevin Ushey  <kevinushey@gmail.com>
+
+	* R/Module.R: Force 'finalize' method to be materialized
+
+2022-09-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+	* R/Attributes.R: Support C++20, C++23 and C++2b (for experimental /
+	incomplete support) via new plugins
+
+2022-07-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+2022-07-23  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* inst/include/Rcpp/r/headers.h: Unwind protection is enabled by default
+	unless `RCPP_NO_UNWIND_PROTECT` is defined (`RCPP_USE_UNWIND_PROTECT` is
+	not checked anymore and has no effect)
+	* inst/include/Rcpp/vector/Vector.h: Switch evaluation to `Rcpp_eval`
+	* R/Attributes.R: `[[Rcpp::plugins(unwindProtect)]]` is deprecated
+	* inst/tinytest/cpp/stack.cpp: Adapted
+	* inst/tinytest/test_exceptions.R: Adapted
+	* inst/tinytest/test_interface.R: Adapted
+	* inst/tinytest/testRcppInterfaceExporter/src/config.h: Removed
+
+2022-07-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci-4.1/Dockerfile: Add Dockerfile for 4.1 series
+	* .github/workflows/ci.yaml: Add 4.1 to CI matrix
+	* .github/workflows/docker.yaml: Do not rebuild versioned ones
+
+2022-07-02  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.9
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+        * vignettes/rmd/Rcpp.bib: Idem
+        * inst/bib/Rcpp.bib: Idem
+	* vignettes/pdf/*: Rebuilt
+
+2022-07-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* man/dependsAttribute.Rd: Use https in URL
+	* man/exportAttribute.Rd: Idem
+	* man/interfacesAttribute.Rd: Idem
+	* DESCRIPTION (URL): Idem
+	* README.md: Idem, use Amazon page for Rcpp book
+
+2022-05-26  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+2022-05-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/tinytest/test_string.R: Add C++11 conditioning for new unit tests
+
+2022-05-23  Dean Scarff  <dos@scarff.id.au>
+
+	* inst/include/Rcpp/String.h: Make less copies of strings via move
+	semantics and preserving the buffer/SEXP representation when copying
+	* inst/include/RcppCommon.h: include <utility> for std::move
+	* inst/tinytest/cpp/String.cpp: Add unit tests
+	* inst/tinytest/test_string.R: Add unit tests
+
+2022-05-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci/Dockerfile: Added xml2, also use more r-cran-* binaries
+
+2022-05-12  Marco Colombo <mar.colombo13@gmail.com>
+
+	* vignettes/rmd/Rcpp-FAQ.Rmd: Fixed typo
+
+2022-04-03  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp-FAQ.Rmd: Add paragraph about Date(time) not
+	being aimed at parsing large quantities at once
+	* vignettes/pdf/Rcpp-FAQ.pdf: Idem
+
+	* vignettes/rmd/Rcpp.bib: Add four entries
+        * inst/bib/Rcpp.bib: Idem
+
+2022-03-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+2022-03-13  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* src/barrier.cpp: Untag tokens upon removal from the precious list,
+	so that the internal reference counter can be safely decremented by R
+
+2022-03-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+	* tests/tinytest.R: Disable full tests on four-digits release to not
+	exceed CRAN test time preference
+
+2022-03-10  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+	* inst/tinytest/cpp/sugar.cpp: Also conditionally replace
+	std::unary_function with std::function
+	* vignettes/rmd/Rcpp-sugar.Rmd: Replace std::unary_function example
+	with std::function (implicitly requiring C++ in vignette example)
+	* vignettes/rmd/Rcpp-FAQ.Rmd: Idem
+
+2022-03-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/Language.h: To quieten compilations, replace
+	std::(unary|binary)_function with std::function for C++11 or later
+	* inst/include/Rcpp/StringTransformer.he: Idem
+
+2022-01-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+2022-01-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/attributes.cpp: Make three small changes to permit compilation
+	under C++98 now (while we consider just turning to C++11 overall)
+
+2022-01-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/tinytest/test_packageversion.R: Comparison to 'dev' revision
+	version now tolerant of optional trailing zero (e.g. 1.0.8.0)
+
+2022-01-11  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Date, Version): Release 1.0.8
+
+        * inst/include/Rcpp/config.h: Idem
+        * inst/NEWS.Rd: Idem
+        * vignettes/rmd/Rcpp.bib: Idem
+        * inst/bib/Rcpp.bib: Idem
+	* vignettes/pdf/*: Rebuilt
+
+	* inst/include/Rcpp/r/headers.h: STRICT_R_HEADERS set by default
+	unless override RCPP_NO_STRICT_HEADERS is set (cf issue #1158)
+
+2022-01-10  Dirk Eddelbuettel  <edd@debian.org>
+
+        * vignettes/rmd/Rcpp.bib: Updated CRAN and R references
+        * inst/bib/Rcpp.bib: Idem
+        * vignettes/rmd/getCurrentVersionsOfCitedPackages.R: Updated
+
+2022-01-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+
+	* inst/NEWS.Rd: Added entries for a few PRs since last release
+
+	* vignettes/rmd/Rcpp.bib: Provide both url and doi entries
+	* inst/bib/Rcpp.bib: Idem
+
+2021-12-28  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Add section on performance
+
+2021-12-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Update usage counts
+
+2021-12-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp.bib: Update JSS references to new doi scheme,
+	update http URL links to https
+	* inst/bib/Rcpp.bib: Idem
+
+2021-12-10  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+2021-12-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/Rcpp/Rcpp: Added as new entry point
+	* inst/include/Rcpp/Light: Added as lighter-weight entry point
+	* inst/include/Rcpp/Lighter: Idem
+	* inst/include/Rcpp/Lightest: Idem
+
+2021-11-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Remove Travis badge
+	* .travis.yml: Removed
+
+2021-11-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci/Dockerfile: Minor cleanup
+
+2021-11-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/RcppLdpath.R: Simplified as we no longer need to worry about CXX0X
+
+2021-11-11  Kevin Ushey  <kevinushey@gmail.com>
+
+	* R/RcppLdpath.R: CxxFlags() now quotes its include path
+
+2021-10-15  Travers Ching  <traversc@gmail.com>
+
+	* inst/tinytest/testRcppAttributePackage: Tests `signature` attribute
+	* inst/tinytest/test_attribute_package.R: Tests `signature` attribute
+
+2021-10-13  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Switch JSS url to doi form per JSS request
+	* man/Rcpp-package.Rd: Idem
+	* man/RcppLdFlags.Rd: Idem
+	* inst/CITATION: Only use doi entries in three citEntry blocks
+
+2021-10-11  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Version, Date): Roll minor version
+	* inst/include/Rcpp/config.h: Idem
+
+	* .codecov.yml (comment): Disable codecov comments on PRs
+
+2021-10-10  Travers Ching  <traversc@gmail.com>
+
+	* src/attributes.cpp: Add `signature` attribute and syntax checks
+
+2021-10-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/docker.yaml (jobs): Add container builder action
+
+2021-10-01  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Version, Date): Roll minor version
+        * inst/include/Rcpp/config.h: Idem
+
+	* inst/NEWS.Rd: Updated
+
+2021-09-29  Iñaki Ucar  <iucar@fedoraproject.org>
+
+	* inst/include/Rcpp/XPtr.h: Check for new define
+        `RCPP_USE_FINALIZE_ON_EXIT` to flip the value of XPtr's `finalizeOnExit`
+        parameter from false (default) to true.
+	* inst/tinytest/test_xptr.R: Added test for this functionality.
+
+2021-09-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Added total downloads badge
+
+2021-09-06  Dirk Eddelbuettel  <edd@debian.org>
+
+	* docker/ci-4.0/Dockerfile: Using R 4.0.5 to build ci-4.0
+	* .github/workflows/ci.yaml (jobs): Also run against R 4.0.*
+
+2021-09-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/examples/Misc/piSugar.cpp (piSugar): Remove spurious call to
+	RNGScope we do not need with Rcpp Attributes
+	* inst/examples/RcppGibbs/RcppGibbs.R (Rgibbs): Comment on two uses
+	of RNGScope as historical in pre-Attributes code
+	* inst/examples/RcppGibbs/timeRNGs.R: Idem for one more
+
+2021-08-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/bib/Rcpp.bib: Use https for CRAN URLs
+	* vignettes/rmd/Rcpp.bib: Idem
+
+2021-07-25  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Version, Date): Roll minor version
+        * inst/include/Rcpp/config.h: Idem
+
+2021-07-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* vignettes/rmd/Rcpp-FAQ.Rmd: New entry on growing vectors
+
+2021-07-08  Dirk Eddelbuettel  <edd@debian.org>
+
+        * DESCRIPTION (Version, Date): Roll minor version
+        * inst/include/Rcpp/config.h: Idem
+
+	* cleanup: Check for optional vignettes/rmd before trying to access it
+
 2021-07-06  Dirk Eddelbuettel  <edd@debian.org>
 
         * DESCRIPTION (Date, Version): Release 1.0.7
