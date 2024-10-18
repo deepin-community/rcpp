@@ -65,6 +65,12 @@ rcpp (1.0.8-1) unstable; urgency=medium
   * debian/control: Set Standards-Version: to current version
 
  -- Dirk Eddelbuettel <edd@debian.org>  Thu, 13 Jan 2022 19:17:41 -0600
+ 
+rcpp (1.0.7-2deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Fri, 20 Sep 2024 12:17:41 +0800
 
 rcpp (1.0.7-2) unstable; urgency=medium
 
